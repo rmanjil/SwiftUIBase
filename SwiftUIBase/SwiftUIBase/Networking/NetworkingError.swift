@@ -13,7 +13,6 @@ extension Error {
     }
 }
 
-
 enum NetworkErrorType {
     case networkingNotInitialized
     case invalidBaseURL

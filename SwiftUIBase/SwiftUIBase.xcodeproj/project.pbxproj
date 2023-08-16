@@ -14,6 +14,21 @@
 		2A9EF3F92A8CAFF400F16561 /* SwiftUIBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9EF3F82A8CAFF400F16561 /* SwiftUIBaseTests.swift */; };
 		2A9EF4032A8CAFF500F16561 /* SwiftUIBaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9EF4022A8CAFF500F16561 /* SwiftUIBaseUITests.swift */; };
 		2A9EF4052A8CAFF500F16561 /* SwiftUIBaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9EF4042A8CAFF500F16561 /* SwiftUIBaseUITestsLaunchTests.swift */; };
+		2AA72B232A8CE7B700E1FF29 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B212A8CE7B700E1FF29 /* LoginViewModel.swift */; };
+		2AA72B242A8CE7B700E1FF29 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B222A8CE7B700E1FF29 /* LoginScreen.swift */; };
+		2AA72B282A8CE84100E1FF29 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B262A8CE84100E1FF29 /* SecureTextField.swift */; };
+		2AA72B292A8CE84100E1FF29 /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B272A8CE84100E1FF29 /* CustomText.swift */; };
+		2AA72B2E2A8CE8CF00E1FF29 /* TextInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B2C2A8CE8CF00E1FF29 /* TextInteractor.swift */; };
+		2AA72B2F2A8CE8CF00E1FF29 /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B2D2A8CE8CF00E1FF29 /* TextModel.swift */; };
+		2AA72B322A8CE93000E1FF29 /* ActivityIndictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B312A8CE93000E1FF29 /* ActivityIndictor.swift */; };
+		2AA72B352A8CE98D00E1FF29 /* PatternConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B342A8CE98C00E1FF29 /* PatternConformance.swift */; };
+		2AA72B382A8CEAC000E1FF29 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 2AA72B372A8CEAC000E1FF29 /* SwiftKeychainWrapper */; };
+		2AA72B3C2A8CEB2200E1FF29 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B3A2A8CEB2200E1FF29 /* String+Extension.swift */; };
+		2AA72B3D2A8CEB2200E1FF29 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B3B2A8CEB2200E1FF29 /* View+Extension.swift */; };
+		2AA72B422A8CEB9900E1FF29 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B3F2A8CEB9900E1FF29 /* Constant.swift */; };
+		2AA72B432A8CEB9900E1FF29 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B402A8CEB9900E1FF29 /* AppError.swift */; };
+		2AA72B442A8CEB9900E1FF29 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B412A8CEB9900E1FF29 /* ImagePicker.swift */; };
+		2AA72B472A8CED0A00E1FF29 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA72B462A8CED0A00E1FF29 /* UserManager.swift */; };
 		2AC1D4A62A8CB31F000589DF /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D48E2A8CB31F000589DF /* Encoding.swift */; };
 		2AC1D4A72A8CB31F000589DF /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D48F2A8CB31F000589DF /* Parameters.swift */; };
 		2AC1D4A82A8CB31F000589DF /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4902A8CB31F000589DF /* NetworkingError.swift */; };
@@ -34,7 +49,6 @@
 		2AC1D4B72A8CB31F000589DF /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A32A8CB31F000589DF /* RequestMaker.swift */; };
 		2AC1D4B82A8CB31F000589DF /* NetworkingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A42A8CB31F000589DF /* NetworkingConfiguration.swift */; };
 		2AC1D4B92A8CB31F000589DF /* NetworkingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A52A8CB31F000589DF /* NetworkingRouter.swift */; };
-		2AC1D4BC2A8CBD79000589DF /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC1D4BB2A8CBD79000589DF /* SwiftKeychainWrapper */; };
 		2AC1D4C02A8CC78E000589DF /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4BF2A8CC78E000589DF /* AuthRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +80,20 @@
 		2A9EF3FE2A8CAFF500F16561 /* SwiftUIBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9EF4022A8CAFF500F16561 /* SwiftUIBaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBaseUITests.swift; sourceTree = "<group>"; };
 		2A9EF4042A8CAFF500F16561 /* SwiftUIBaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2AA72B212A8CE7B700E1FF29 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2AA72B222A8CE7B700E1FF29 /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		2AA72B262A8CE84100E1FF29 /* SecureTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
+		2AA72B272A8CE84100E1FF29 /* CustomText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
+		2AA72B2C2A8CE8CF00E1FF29 /* TextInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInteractor.swift; sourceTree = "<group>"; };
+		2AA72B2D2A8CE8CF00E1FF29 /* TextModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		2AA72B312A8CE93000E1FF29 /* ActivityIndictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndictor.swift; sourceTree = "<group>"; };
+		2AA72B342A8CE98C00E1FF29 /* PatternConformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternConformance.swift; sourceTree = "<group>"; };
+		2AA72B3A2A8CEB2200E1FF29 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2AA72B3B2A8CEB2200E1FF29 /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		2AA72B3F2A8CEB9900E1FF29 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2AA72B402A8CEB9900E1FF29 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		2AA72B412A8CEB9900E1FF29 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2AA72B462A8CED0A00E1FF29 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2AC1D48E2A8CB31F000589DF /* Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
 		2AC1D48F2A8CB31F000589DF /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		2AC1D4902A8CB31F000589DF /* NetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
@@ -94,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AC1D4BC2A8CBD79000589DF /* SwiftKeychainWrapper in Frameworks */,
+				2AA72B382A8CEAC000E1FF29 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +166,14 @@
 		2A9EF3E62A8CAFF200F16561 /* SwiftUIBase */ = {
 			isa = PBXGroup;
 			children = (
+				2AA72B452A8CEC8D00E1FF29 /* Manager */,
+				2AA72B3E2A8CEB9900E1FF29 /* Helper */,
+				2AA72B392A8CEB2200E1FF29 /* Extension */,
+				2AA72B332A8CE98C00E1FF29 /* Protocol */,
+				2AA72B302A8CE93000E1FF29 /* ViewModifier */,
+				2AA72B2B2A8CE8CF00E1FF29 /* Interactor */,
+				2AA72B252A8CE84100E1FF29 /* CustomView */,
+				2AA72B1F2A8CE5BA00E1FF29 /* Module */,
 				2AC1D4BE2A8CC779000589DF /* Model */,
 				2AC1D4BD2A8CC751000589DF /* Router */,
 				2AC1D48C2A8CB31F000589DF /* Networking */,
@@ -172,6 +208,84 @@
 				2A9EF4042A8CAFF500F16561 /* SwiftUIBaseUITestsLaunchTests.swift */,
 			);
 			path = SwiftUIBaseUITests;
+			sourceTree = "<group>";
+		};
+		2AA72B1F2A8CE5BA00E1FF29 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B202A8CE7B700E1FF29 /* LoginView */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		2AA72B202A8CE7B700E1FF29 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B212A8CE7B700E1FF29 /* LoginViewModel.swift */,
+				2AA72B222A8CE7B700E1FF29 /* LoginScreen.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		2AA72B252A8CE84100E1FF29 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B262A8CE84100E1FF29 /* SecureTextField.swift */,
+				2AA72B272A8CE84100E1FF29 /* CustomText.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		2AA72B2B2A8CE8CF00E1FF29 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B2C2A8CE8CF00E1FF29 /* TextInteractor.swift */,
+				2AA72B2D2A8CE8CF00E1FF29 /* TextModel.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2AA72B302A8CE93000E1FF29 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B312A8CE93000E1FF29 /* ActivityIndictor.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		2AA72B332A8CE98C00E1FF29 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B342A8CE98C00E1FF29 /* PatternConformance.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		2AA72B392A8CEB2200E1FF29 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B3A2A8CEB2200E1FF29 /* String+Extension.swift */,
+				2AA72B3B2A8CEB2200E1FF29 /* View+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2AA72B3E2A8CEB9900E1FF29 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B3F2A8CEB9900E1FF29 /* Constant.swift */,
+				2AA72B402A8CEB9900E1FF29 /* AppError.swift */,
+				2AA72B412A8CEB9900E1FF29 /* ImagePicker.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2AA72B452A8CEC8D00E1FF29 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2AA72B462A8CED0A00E1FF29 /* UserManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		2AC1D48C2A8CB31F000589DF /* Networking */ = {
@@ -273,7 +387,7 @@
 			);
 			name = SwiftUIBase;
 			packageProductDependencies = (
-				2AC1D4BB2A8CBD79000589DF /* SwiftKeychainWrapper */,
+				2AA72B372A8CEAC000E1FF29 /* SwiftKeychainWrapper */,
 			);
 			productName = SwiftUIBase;
 			productReference = 2A9EF3E42A8CAFF200F16561 /* SwiftUIBase.app */;
@@ -348,7 +462,7 @@
 			);
 			mainGroup = 2A9EF3DB2A8CAFF200F16561;
 			packageReferences = (
-				2AC1D4BA2A8CBD79000589DF /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				2AA72B362A8CEAC000E1FF29 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 2A9EF3E52A8CAFF200F16561 /* Products */;
 			projectDirPath = "";
@@ -393,25 +507,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AC1D4B42A8CB31F000589DF /* TokenManager.swift in Sources */,
+				2AA72B422A8CEB9900E1FF29 /* Constant.swift in Sources */,
 				2AC1D4A62A8CB31F000589DF /* Encoding.swift in Sources */,
 				2A9EF3EA2A8CAFF200F16561 /* ContentView.swift in Sources */,
+				2AA72B2E2A8CE8CF00E1FF29 /* TextInteractor.swift in Sources */,
 				2AC1D4AD2A8CB31F000589DF /* ErrorMessage.swift in Sources */,
+				2AA72B242A8CE7B700E1FF29 /* LoginScreen.swift in Sources */,
 				2AC1D4B82A8CB31F000589DF /* NetworkingConfiguration.swift in Sources */,
+				2AA72B3D2A8CEB2200E1FF29 /* View+Extension.swift in Sources */,
+				2AA72B352A8CE98D00E1FF29 /* PatternConformance.swift in Sources */,
 				2AC1D4A92A8CB31F000589DF /* Meta.swift in Sources */,
 				2A9EF3E82A8CAFF200F16561 /* SwiftUIBaseApp.swift in Sources */,
+				2AA72B292A8CE84100E1FF29 /* CustomText.swift in Sources */,
 				2AC1D4B22A8CB31F000589DF /* ResponseParser.swift in Sources */,
 				2AC1D4AA2A8CB31F000589DF /* Container.swift in Sources */,
+				2AA72B2F2A8CE8CF00E1FF29 /* TextModel.swift in Sources */,
+				2AA72B282A8CE84100E1FF29 /* SecureTextField.swift in Sources */,
 				2AC1D4AB2A8CB31F000589DF /* Pagination.swift in Sources */,
+				2AA72B472A8CED0A00E1FF29 /* UserManager.swift in Sources */,
+				2AA72B3C2A8CEB2200E1FF29 /* String+Extension.swift in Sources */,
 				2AC1D4B92A8CB31F000589DF /* NetworkingRouter.swift in Sources */,
 				2AC1D4AF2A8CB31F000589DF /* KeyChainManager.swift in Sources */,
+				2AA72B442A8CEB9900E1FF29 /* ImagePicker.swift in Sources */,
 				2AC1D4AE2A8CB31F000589DF /* Connectivity.swift in Sources */,
+				2AA72B322A8CE93000E1FF29 /* ActivityIndictor.swift in Sources */,
 				2AC1D4B02A8CB31F000589DF /* Logger.swift in Sources */,
 				2AC1D4AC2A8CB31F000589DF /* ApiResponse.swift in Sources */,
 				2AC1D4B32A8CB31F000589DF /* HTTPMethod.swift in Sources */,
 				2AC1D4B72A8CB31F000589DF /* RequestMaker.swift in Sources */,
+				2AA72B432A8CEB9900E1FF29 /* AppError.swift in Sources */,
 				2AC1D4C02A8CC78E000589DF /* AuthRouter.swift in Sources */,
 				2AC1D4B52A8CB31F000589DF /* NetworkingResponse.swift in Sources */,
 				2AC1D4A72A8CB31F000589DF /* Parameters.swift in Sources */,
+				2AA72B232A8CE7B700E1FF29 /* LoginViewModel.swift in Sources */,
 				2AC1D4B62A8CB31F000589DF /* RequestBuilder.swift in Sources */,
 				2AC1D4A82A8CB31F000589DF /* NetworkingError.swift in Sources */,
 				2AC1D4B12A8CB31F000589DF /* Networking.swift in Sources */,
@@ -743,7 +871,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2AC1D4BA2A8CBD79000589DF /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+		2AA72B362A8CEAC000E1FF29 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
 			requirement = {
@@ -754,9 +882,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2AC1D4BB2A8CBD79000589DF /* SwiftKeychainWrapper */ = {
+		2AA72B372A8CEAC000E1FF29 /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2AC1D4BA2A8CBD79000589DF /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			package = 2AA72B362A8CEAC000E1FF29 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */

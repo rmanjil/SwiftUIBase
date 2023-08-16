@@ -75,11 +75,6 @@ extension KeyChainManager {
     }
 }
 
-enum CacheKey: String {
-    case isAppInstall
-    case dashboardData
-}
-
 struct Cacher {
     let userDefault = UserDefaults.standard
     @discardableResult
