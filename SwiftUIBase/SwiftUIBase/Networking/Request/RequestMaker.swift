@@ -25,7 +25,6 @@ struct RequestMaker {
     typealias NetworkResult<O: Decodable> = (Result<NetworkingResponse<O>, NetworkingError>)
     private let router: NetworkingRouter
     private let config: NetworkingConfiguration
-    private let tokenManager = TokenManager()
     
     init(router: NetworkingRouter, config: NetworkingConfiguration) {
         self.router = router
@@ -65,33 +64,34 @@ struct RequestMaker {
     }
     
     private func updateTokenIfNeeded() async -> Bool  {
-        guard tokenManager.isTokenValid() else {
+        guard config.tokenManageable.isTokenValid() else {
             return await refreshToken()
         }
         return true
     }
     
     private func refreshToken() async -> Bool {
-        do {
-            let request = try RequestBuilder(router: AuthRouter.refreshToken(tokenManager.param), config: config).getRequest()
-            let session  = URLSession(configuration: config.sessionConfiguration)
-            let result: NetworkResult<ApiResponse<AuthModel>> = await normalRequest(session, request: request)
-            switch result {
-            case .success(let response):
-                guard let object = response.object?.data else { break }
-                tokenManager.token = object
-                return true
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-            KeyChainManager().clear(.authModel)
-            NotificationCenter.default.post(name: .tokenExpire, object: nil)
-          
-            return false
-        } catch {
-            print(error.localizedDescription)
-            return false
-        }
+//        do {
+//            let request = try RequestBuilder(router: AuthRouter.refreshToken(tokenManager.param), config: config).getRequest()
+//            let session  = URLSession(configuration: config.sessionConfiguration)
+//            let result: NetworkResult<ApiResponse<AuthModel>> = await normalRequest(session, request: request)
+//            switch result {
+//            case .success(let response):
+//                guard let object = response.object?.data else { break }
+//                tokenManager.token = object
+//                return true
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//            KeyChainManager().clear(.authModel)
+//            NotificationCenter.default.post(name: .tokenExpire, object: nil)
+//
+//            return false
+//        } catch {
+//            print(error.localizedDescription)
+//            return false
+//        }
+        await config.tokenManageable.refreshToken()
     }
     
     private func checkMultipartThenRequest<O>(_ session: URLSession, request: URLRequest, parameters: Parameters, multipart: [File]) async -> NetworkResult<ApiResponse<O>> {
@@ -146,9 +146,4 @@ struct RequestMaker {
         body.append("--\(boundary)--\r\n".data(using: .utf8)!)
         return body
     }
-}
-
-extension NSNotification.Name {
-    
-    static let tokenExpire = NSNotification.Name("TOKEN_EXPIRE")
 }

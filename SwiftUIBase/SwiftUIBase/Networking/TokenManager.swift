@@ -21,7 +21,28 @@ public class AuthModel: Codable {
     
 }
 
-class TokenManager {
+protocol TokenManageable {
+    func refreshToken() async -> Bool
+    func isTokenValid() -> Bool
+     
+}
+
+class TokenManager: TokenManageable {
+
+    func refreshToken() async -> Bool { 
+        do {
+            let value = try  await Networking.default.dataRequest(router: AuthRouter.refreshToken(param), type: AuthModel.self)
+            token = value.data
+            return true
+        } catch {
+            print(error.localizedDescription)
+        }
+        KeyChainManager().clear(.authModel)
+        NotificationCenter.default.post(name: .tokenExpire, object: nil)
+
+        return false
+    }
+    
     var token: AuthModel? {
         set {
             if let newValue {
@@ -46,4 +67,9 @@ class TokenManager {
         }
         return [:]
     }
+}
+
+
+extension NSNotification.Name {
+    static let tokenExpire = NSNotification.Name("TOKEN_EXPIRE")
 }
