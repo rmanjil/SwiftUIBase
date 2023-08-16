@@ -34,12 +34,8 @@
 		2AC1D4B72A8CB31F000589DF /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A32A8CB31F000589DF /* RequestMaker.swift */; };
 		2AC1D4B82A8CB31F000589DF /* NetworkingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A42A8CB31F000589DF /* NetworkingConfiguration.swift */; };
 		2AC1D4B92A8CB31F000589DF /* NetworkingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A52A8CB31F000589DF /* NetworkingRouter.swift */; };
-<<<<<<< HEAD
 		2AC1D4BC2A8CBD79000589DF /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC1D4BB2A8CBD79000589DF /* SwiftKeychainWrapper */; };
 		2AC1D4C02A8CC78E000589DF /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4BF2A8CC78E000589DF /* AuthRouter.swift */; };
-=======
-		98419D742A8CB72B00579CD7 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 98419D732A8CB72B00579CD7 /* SwiftKeychainWrapper */; };
->>>>>>> develop
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,11 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				2AC1D4BC2A8CBD79000589DF /* SwiftKeychainWrapper in Frameworks */,
-=======
-				98419D742A8CB72B00579CD7 /* SwiftKeychainWrapper in Frameworks */,
->>>>>>> develop
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +273,7 @@
 			);
 			name = SwiftUIBase;
 			packageProductDependencies = (
-<<<<<<< HEAD
 				2AC1D4BB2A8CBD79000589DF /* SwiftKeychainWrapper */,
-=======
-				98419D732A8CB72B00579CD7 /* SwiftKeychainWrapper */,
->>>>>>> develop
 			);
 			productName = SwiftUIBase;
 			productReference = 2A9EF3E42A8CAFF200F16561 /* SwiftUIBase.app */;
@@ -360,11 +348,7 @@
 			);
 			mainGroup = 2A9EF3DB2A8CAFF200F16561;
 			packageReferences = (
-<<<<<<< HEAD
 				2AC1D4BA2A8CBD79000589DF /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
-=======
-				98419D722A8CB72B00579CD7 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
->>>>>>> develop
 			);
 			productRefGroup = 2A9EF3E52A8CAFF200F16561 /* Products */;
 			projectDirPath = "";
@@ -759,35 +743,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-<<<<<<< HEAD
 		2AC1D4BA2A8CBD79000589DF /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.0.0;
-=======
-		98419D722A8CB72B00579CD7 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
->>>>>>> develop
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-<<<<<<< HEAD
 		2AC1D4BB2A8CBD79000589DF /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AC1D4BA2A8CBD79000589DF /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
-=======
-		98419D732A8CB72B00579CD7 /* SwiftKeychainWrapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98419D722A8CB72B00579CD7 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
->>>>>>> develop
 			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
