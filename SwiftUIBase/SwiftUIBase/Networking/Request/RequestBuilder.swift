@@ -38,7 +38,7 @@ struct RequestBuilder {
     }
     
     private func applyHeaders(config: NetworkingConfiguration, router: NetworkingRouter, request: inout URLRequest) {
-        router.headers.forEach { request.addValue($0, forHTTPHeaderField: $1) }
+        router.headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         request.addValue(config.clientId, forHTTPHeaderField: "clientId")
         request.addValue(config.clientSecret, forHTTPHeaderField: "clientSecret")
         request.addValue("ios", forHTTPHeaderField: "platform")
