@@ -5,7 +5,7 @@
 	<key>APP_API_BASE_URL</key>
 	<string>$(APP_API_BASE_URL)</string>
 	<key>APP_CLIENT_ID</key>
-	<string>$(APP_CLIENT_ID)\</string>
+	<string>$(APP_CLIENT_ID)</string>
 	<key>APP_CLIENT_SECRET</key>
 	<string>$(APP_CLIENT_SECRET)</string>
 </dict>

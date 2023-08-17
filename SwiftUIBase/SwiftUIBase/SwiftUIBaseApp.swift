@@ -34,6 +34,6 @@ enum EnvironmentApp {
             assertionFailure("check for APP_API_BASE_URL, APP_CLIENT_ID and APP_CLIENT_SECRET in Info.plist and Target's Build Setting")
             return NetworkingConfiguration(baseURL: "", clientId: "", clientSecret: "", tokenManageable: TokenManager())
         }
-        return NetworkingConfiguration(baseURL: baseURL, clientId: "1", clientSecret: clientSecret, tokenManageable: TokenManager())
+        return NetworkingConfiguration(baseURL: baseURL, clientId: clientId, clientSecret: clientSecret, tokenManageable: TokenManager())
     }
 }
