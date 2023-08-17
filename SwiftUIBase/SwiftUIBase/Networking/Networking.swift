@@ -26,6 +26,7 @@ class Networking: NetworkConformable {
     /// - Parameter config: The networking configuration
     static func initialize(with config: NetworkingConfiguration) {
         Networking.default.config = config
+        _ = Connectivity.default
     }
     
     /// Method to create a response publisher for data

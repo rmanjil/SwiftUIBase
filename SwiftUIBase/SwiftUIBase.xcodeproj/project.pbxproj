@@ -115,6 +115,7 @@
 		2AC1D4A42A8CB31F000589DF /* NetworkingConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingConfiguration.swift; sourceTree = "<group>"; };
 		2AC1D4A52A8CB31F000589DF /* NetworkingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingRouter.swift; sourceTree = "<group>"; };
 		2AC1D4BF2A8CC78E000589DF /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		2AF5E6C52A8DED6600B9D983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +167,7 @@
 		2A9EF3E62A8CAFF200F16561 /* SwiftUIBase */ = {
 			isa = PBXGroup;
 			children = (
+				2AF5E6C52A8DED6600B9D983 /* Info.plist */,
 				2AA72B452A8CEC8D00E1FF29 /* Manager */,
 				2AA72B3E2A8CEB9900E1FF29 /* Helper */,
 				2AA72B392A8CEB2200E1FF29 /* Extension */,
@@ -696,6 +698,9 @@
 		2A9EF4092A8CAFF500F16561 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_API_BASE_URL = "https://dev.practical-action.ekbana.info/api/v1";
+				APP_CLIENT_ID = 1;
+				APP_CLIENT_SECRET = fBXCdZgBtOcKU2AkhOtxQjwlFPDFeaZVJ9WyeWFs;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,6 +709,7 @@
 				DEVELOPMENT_TEAM = 974PYRN6CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIBase/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -726,6 +732,9 @@
 		2A9EF40A2A8CAFF500F16561 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_API_BASE_URL = "https://dev.practical-action.ekbana.info/api/v1";
+				APP_CLIENT_ID = 1;
+				APP_CLIENT_SECRET = fBXCdZgBtOcKU2AkhOtxQjwlFPDFeaZVJ9WyeWFs;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -734,6 +743,7 @@
 				DEVELOPMENT_TEAM = 974PYRN6CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIBase/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
