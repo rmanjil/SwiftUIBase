@@ -30,16 +30,16 @@ class Networking: NetworkConformable {
     
     /// Method to create a response publisher for data
     func dataRequest<O>(router: NetworkingRouter, type: O.Type)  async throws ->  Response<O> where O : Decodable {
-        try  await createAndPerformRequest(router, config: Networking.default.config, multipart: [])
+        try  await createAndPerformRequest(router, multipart: [])
     }
     
     /// Method to create a response publisher for data
     func multipartRequest<O>(router: NetworkingRouter, multipart: [File], type: O.Type) async throws -> Response<O> where O : Decodable {
-        try await createAndPerformRequest(router, config: Networking.default.config, multipart: multipart)
+        try await createAndPerformRequest(router, multipart: multipart)
     }
     
-    private func createAndPerformRequest<O>(_ router: NetworkingRouter, config: NetworkingConfiguration?, multipart: [File]) async throws ->  Response<O> {
-        guard let config = config else {
+    private func createAndPerformRequest<O>(_ router: NetworkingRouter, multipart: [File]) async throws ->  Response<O> {
+        guard let config = Networking.default.config else {
             throw NetworkingError(.networkingNotInitialized)
         }
         
