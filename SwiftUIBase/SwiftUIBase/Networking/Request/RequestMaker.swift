@@ -71,26 +71,6 @@ struct RequestMaker {
     }
     
     private func refreshToken() async -> Bool {
-//        do {
-//            let request = try RequestBuilder(router: AuthRouter.refreshToken(tokenManager.param), config: config).getRequest()
-//            let session  = URLSession(configuration: config.sessionConfiguration)
-//            let result: NetworkResult<ApiResponse<AuthModel>> = await normalRequest(session, request: request)
-//            switch result {
-//            case .success(let response):
-//                guard let object = response.object?.data else { break }
-//                tokenManager.token = object
-//                return true
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//            KeyChainManager().clear(.authModel)
-//            NotificationCenter.default.post(name: .tokenExpire, object: nil)
-//
-//            return false
-//        } catch {
-//            print(error.localizedDescription)
-//            return false
-//        }
         await config.tokenManageable.refreshToken()
     }
     
@@ -114,6 +94,15 @@ struct RequestMaker {
                 return  await normalRequest(session, request: request)
             }
             return .success(networkResponse)
+        } catch let DecodingError.typeMismatch(type, context) {
+            let message = "Type '\(type)' mismatch: \(context.debugDescription)"
+            return .failure(NetworkingError(message))
+        } catch  let DecodingError.keyNotFound(key, context) {
+            let message = "Key '\(key)' mismatch: \(context.debugDescription)"
+            return .failure(NetworkingError(message))
+        } catch let DecodingError.valueNotFound(value, context) {
+            let message = "value '\(value)' mismatch: \(context.debugDescription)"
+            return .failure(NetworkingError(message))
         } catch {
             return .failure(NetworkingError(error))
         }
