@@ -20,6 +20,7 @@ struct LoginScreen: View {
                 .frame(width: 100, height: 100)
                 .foregroundColor(Color.blue)
                 .padding(8)
+            Text(LocalizedKey.appName.value).foregroundColor(Color.blue)
             CustomText(title: "Email", binder: viewModel.emailTextModel, contentType: .emailAddress)
                 .keyboardType(.emailAddress)
                 .autocapitalization(.none)
@@ -40,11 +41,11 @@ struct LoginScreen: View {
         .padding()
         .activityIndictor(isLoading: $isLoading)
         .navigationTitle("Login")
-//        .navigationBarTitleDisplayMode(.inline).toolbar(content: {
-////            NavigationLink(destination: RegisterScreen()) {
-////                Text("Sign Up")
-////            }
-//        })
+        .navigationBarTitleDisplayMode(.inline).toolbar(content: {
+            NavigationLink(destination: SettingScreen()) {
+                Text("Setting")
+            }
+        })
         .background {
             Color.white
         }

@@ -50,6 +50,10 @@
 		2AC1D4B82A8CB31F000589DF /* NetworkingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A42A8CB31F000589DF /* NetworkingConfiguration.swift */; };
 		2AC1D4B92A8CB31F000589DF /* NetworkingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4A52A8CB31F000589DF /* NetworkingRouter.swift */; };
 		2AC1D4C02A8CC78E000589DF /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1D4BF2A8CC78E000589DF /* AuthRouter.swift */; };
+		2AE9D78E2A93450B004A4FCB /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9D78D2A93450B004A4FCB /* Localization.swift */; };
+		2AE9D7912A934682004A4FCB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AE9D7932A934682004A4FCB /* Localizable.strings */; };
+		2AE9D7972A935087004A4FCB /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9D7962A935087004A4FCB /* SettingScreen.swift */; };
+		2AE9D7992A9350A7004A4FCB /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9D7982A9350A7004A4FCB /* SettingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +119,11 @@
 		2AC1D4A42A8CB31F000589DF /* NetworkingConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingConfiguration.swift; sourceTree = "<group>"; };
 		2AC1D4A52A8CB31F000589DF /* NetworkingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingRouter.swift; sourceTree = "<group>"; };
 		2AC1D4BF2A8CC78E000589DF /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		2AE9D78D2A93450B004A4FCB /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		2AE9D7922A934682004A4FCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2AE9D7942A934685004A4FCB /* ne-NP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ne-NP"; path = "ne-NP.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2AE9D7962A935087004A4FCB /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
+		2AE9D7982A9350A7004A4FCB /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		2AF5E6C52A8DED6600B9D983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +176,7 @@
 		2A9EF3E62A8CAFF200F16561 /* SwiftUIBase */ = {
 			isa = PBXGroup;
 			children = (
+				2AE9D78C2A9344EA004A4FCB /* Localization */,
 				2AF5E6C52A8DED6600B9D983 /* Info.plist */,
 				2AA72B452A8CEC8D00E1FF29 /* Manager */,
 				2AA72B3E2A8CEB9900E1FF29 /* Helper */,
@@ -215,6 +225,7 @@
 		2AA72B1F2A8CE5BA00E1FF29 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				2AE9D7952A93506D004A4FCB /* Setting */,
 				2AA72B202A8CE7B700E1FF29 /* LoginView */,
 			);
 			path = Module;
@@ -372,6 +383,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2AE9D78C2A9344EA004A4FCB /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				2AE9D78D2A93450B004A4FCB /* Localization.swift */,
+				2AE9D7932A934682004A4FCB /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		2AE9D7952A93506D004A4FCB /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2AE9D7962A935087004A4FCB /* SettingScreen.swift */,
+				2AE9D7982A9350A7004A4FCB /* SettingViewModel.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -461,6 +490,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"ne-NP",
 			);
 			mainGroup = 2A9EF3DB2A8CAFF200F16561;
 			packageReferences = (
@@ -483,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9EF3EF2A8CAFF400F16561 /* Preview Assets.xcassets in Resources */,
+				2AE9D7912A934682004A4FCB /* Localizable.strings in Resources */,
 				2A9EF3EC2A8CAFF400F16561 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE9D78E2A93450B004A4FCB /* Localization.swift in Sources */,
 				2AC1D4B42A8CB31F000589DF /* TokenManager.swift in Sources */,
 				2AA72B422A8CEB9900E1FF29 /* Constant.swift in Sources */,
 				2AC1D4A62A8CB31F000589DF /* Encoding.swift in Sources */,
@@ -540,7 +572,9 @@
 				2AA72B432A8CEB9900E1FF29 /* AppError.swift in Sources */,
 				2AC1D4C02A8CC78E000589DF /* AuthRouter.swift in Sources */,
 				2AC1D4B52A8CB31F000589DF /* NetworkingResponse.swift in Sources */,
+				2AE9D7972A935087004A4FCB /* SettingScreen.swift in Sources */,
 				2AC1D4A72A8CB31F000589DF /* Parameters.swift in Sources */,
+				2AE9D7992A9350A7004A4FCB /* SettingViewModel.swift in Sources */,
 				2AA72B232A8CE7B700E1FF29 /* LoginViewModel.swift in Sources */,
 				2AC1D4B62A8CB31F000589DF /* RequestBuilder.swift in Sources */,
 				2AC1D4A82A8CB31F000589DF /* NetworkingError.swift in Sources */,
@@ -579,6 +613,18 @@
 			targetProxy = 2A9EF3FF2A8CAFF500F16561 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2AE9D7932A934682004A4FCB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AE9D7922A934682004A4FCB /* en */,
+				2AE9D7942A934685004A4FCB /* ne-NP */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2A9EF4062A8CAFF500F16561 /* Debug */ = {
