@@ -20,7 +20,7 @@ struct LoginScreen: View {
                 .frame(width: 100, height: 100)
                 .foregroundColor(Color.blue)
                 .padding(8)
-            Text(LocalizedKey.appName.value).foregroundColor(Color.blue)
+            Text(LocalizedKey.appName.value).foregroundColor(Color.background)
             CustomText(title: "Email", binder: viewModel.emailTextModel, contentType: .emailAddress)
                 .keyboardType(.emailAddress)
                 .autocapitalization(.none)
@@ -52,6 +52,7 @@ struct LoginScreen: View {
         .alert(isPresented: $isAlert) {
             Alert(title: Text("chat"), message: Text(message))
         }
+       
     }
     
     private func loginAction() {

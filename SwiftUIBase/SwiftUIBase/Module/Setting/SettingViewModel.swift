@@ -10,11 +10,14 @@ import Combine
 
 enum Setting: CaseIterable {
     case language
+    case mode
     
     var title: String {
         switch self {
         case .language:
             return "Language"
+        case .mode:
+            return "Dark Mode"
         }
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct SwiftUIBaseApp: App {
+    @Environment(\.colorScheme) var colorScheme
+    @AppStorage(CacheKey.mode.rawValue) private var isDarkMode: Bool?
     @AppStorage(CacheKey.isLogin.rawValue) private var isLogin = false
     var body: some Scene {
         WindowGroup {
@@ -21,8 +23,10 @@ struct SwiftUIBaseApp: App {
             }.onAppear{
                 Networking.initialize(with: EnvironmentApp.networkConfig())
             }
+            .environment(\.colorScheme, isDarkMode == nil ?  colorScheme : isDarkMode == true ? .dark : .light)
         }
     }
+    
 }
 
 

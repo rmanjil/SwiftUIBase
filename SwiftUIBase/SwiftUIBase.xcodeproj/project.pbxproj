@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A42255F2A946A8000A0006D /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42255E2A946A8000A0006D /* Color+Extension.swift */; };
+		2A4225622A946BAA00A0006D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4225612A946BAA00A0006D /* Color.xcassets */; };
 		2A9EF3E82A8CAFF200F16561 /* SwiftUIBaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9EF3E72A8CAFF200F16561 /* SwiftUIBaseApp.swift */; };
 		2A9EF3EA2A8CAFF200F16561 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9EF3E92A8CAFF200F16561 /* ContentView.swift */; };
 		2A9EF3EC2A8CAFF400F16561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9EF3EB2A8CAFF400F16561 /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A42255E2A946A8000A0006D /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		2A4225612A946BAA00A0006D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		2A9EF3E42A8CAFF200F16561 /* SwiftUIBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9EF3E72A8CAFF200F16561 /* SwiftUIBaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBaseApp.swift; sourceTree = "<group>"; };
 		2A9EF3E92A8CAFF200F16561 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A4225602A946B0800A0006D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A4225612A946BAA00A0006D /* Color.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2A9EF3DB2A8CAFF200F16561 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +188,7 @@
 		2A9EF3E62A8CAFF200F16561 /* SwiftUIBase */ = {
 			isa = PBXGroup;
 			children = (
+				2A4225602A946B0800A0006D /* Resources */,
 				2AE9D78C2A9344EA004A4FCB /* Localization */,
 				2AF5E6C52A8DED6600B9D983 /* Info.plist */,
 				2AA72B452A8CEC8D00E1FF29 /* Manager */,
@@ -279,6 +292,7 @@
 			children = (
 				2AA72B3A2A8CEB2200E1FF29 /* String+Extension.swift */,
 				2AA72B3B2A8CEB2200E1FF29 /* View+Extension.swift */,
+				2A42255E2A946A8000A0006D /* Color+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -513,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9EF3EF2A8CAFF400F16561 /* Preview Assets.xcassets in Resources */,
+				2A4225622A946BAA00A0006D /* Color.xcassets in Resources */,
 				2AE9D7912A934682004A4FCB /* Localizable.strings in Resources */,
 				2A9EF3EC2A8CAFF400F16561 /* Assets.xcassets in Resources */,
 			);
@@ -559,6 +574,7 @@
 				2AA72B282A8CE84100E1FF29 /* SecureTextField.swift in Sources */,
 				2AC1D4AB2A8CB31F000589DF /* Pagination.swift in Sources */,
 				2AA72B472A8CED0A00E1FF29 /* UserManager.swift in Sources */,
+				2A42255F2A946A8000A0006D /* Color+Extension.swift in Sources */,
 				2AA72B3C2A8CEB2200E1FF29 /* String+Extension.swift in Sources */,
 				2AC1D4B92A8CB31F000589DF /* NetworkingRouter.swift in Sources */,
 				2AC1D4AF2A8CB31F000589DF /* KeyChainManager.swift in Sources */,
