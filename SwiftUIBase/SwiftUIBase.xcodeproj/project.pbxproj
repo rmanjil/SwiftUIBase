@@ -58,6 +58,7 @@
 		2AE9D7992A9350A7004A4FCB /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE9D7982A9350A7004A4FCB /* SettingViewModel.swift */; };
 		2AF2DC422A95EBA400D90C5B /* LanguageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2DC412A95EBA400D90C5B /* LanguageScreen.swift */; };
 		2AF2DC442A95EC0A00D90C5B /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2DC432A95EC0A00D90C5B /* LanguageViewModel.swift */; };
+		8FCCD7FA2AA199E800CB0BB6 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCCD7F92AA199E800CB0BB6 /* Font+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		2AF2DC412A95EBA400D90C5B /* LanguageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageScreen.swift; sourceTree = "<group>"; };
 		2AF2DC432A95EC0A00D90C5B /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		2AF5E6C52A8DED6600B9D983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8FCCD7F92AA199E800CB0BB6 /* Font+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 		2AA72B392A8CEB2200E1FF29 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8FCCD7F92AA199E800CB0BB6 /* Font+Extensions.swift */,
 				2AA72B3A2A8CEB2200E1FF29 /* String+Extension.swift */,
 				2AA72B3B2A8CEB2200E1FF29 /* View+Extension.swift */,
 				2A42255E2A946A8000A0006D /* Color+Extension.swift */,
@@ -593,6 +596,7 @@
 				2AA72B3C2A8CEB2200E1FF29 /* String+Extension.swift in Sources */,
 				2AC1D4B92A8CB31F000589DF /* NetworkingRouter.swift in Sources */,
 				2AC1D4AF2A8CB31F000589DF /* KeyChainManager.swift in Sources */,
+				8FCCD7FA2AA199E800CB0BB6 /* Font+Extensions.swift in Sources */,
 				2AA72B442A8CEB9900E1FF29 /* ImagePicker.swift in Sources */,
 				2AC1D4AE2A8CB31F000589DF /* Connectivity.swift in Sources */,
 				2AA72B322A8CE93000E1FF29 /* ActivityIndictor.swift in Sources */,
