@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 private protocol Localizable {
     var key: String { get }
@@ -13,11 +14,12 @@ private protocol Localizable {
 }
 
 private struct Localizer {
+    @AppStorage(CacheKey.language.rawValue) private var language = ""
     static func localized(key: Localizable, bundle: Bundle = .main, tableName: String = "Localizable", value: String = "", comment: String = "", param: String = "") -> String {
         let path = Bundle.main.path(forResource: "ne-NP", ofType: "lproj")
         let bundle1 = Bundle(path: path!)
 
-        let bundleUsed =   Bundle.main.bundleIdentifier == "com.ekbana.tohnichiwapp" ?  bundle : bundle1!
+        let bundleUsed =  Localizer().language.isEmpty ?  bundle : bundle1!
         let value = String(format: NSLocalizedString(key.key, tableName: tableName, bundle: bundleUsed, value: value, comment: comment), param)
         return value
     }

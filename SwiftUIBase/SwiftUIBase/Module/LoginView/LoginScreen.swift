@@ -46,9 +46,9 @@ struct LoginScreen: View {
                 Text("Setting")
             }
         })
-        .background {
-            Color.white
-        }
+//        .background {
+//            Color.secondary
+//        }
         .alert(isPresented: $isAlert) {
             Alert(title: Text("chat"), message: Text(message))
         }

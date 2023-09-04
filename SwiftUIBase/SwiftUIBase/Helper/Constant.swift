@@ -11,4 +11,5 @@ enum CacheKey: String {
     case isLogin = "IS_LOGIN"
     case token = "TOKEN"
     case mode = "MODE"
+    case language = "LANGUAGE"
 }

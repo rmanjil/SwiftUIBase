@@ -9,11 +9,16 @@ import Foundation
 
 protocol NetworkConformable {
     static func initialize(with config: NetworkingConfiguration)
+    func dataRequest<T>(router: NetworkingRouter ,type: T.Type) async throws -> T?
     func dataRequest<O>(router: NetworkingRouter ,type: O.Type) async throws -> Response<O>
     func multipartRequest<O>(router: NetworkingRouter, multipart: [File], type: O.Type) async throws -> Response<O>
 }
 
 class Networking: NetworkConformable {
+    func dataRequest<T>(router: NetworkingRouter, type: T.Type) async throws -> T? {
+        nil 
+    }
+    
     
     /// make the instance shared
     public static let `default` = Networking()

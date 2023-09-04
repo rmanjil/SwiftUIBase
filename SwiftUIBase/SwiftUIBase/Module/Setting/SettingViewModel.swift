@@ -11,6 +11,7 @@ import Combine
 enum Setting: CaseIterable {
     case language
     case mode
+    case setting
     
     var title: String {
         switch self {
@@ -18,6 +19,8 @@ enum Setting: CaseIterable {
             return "Language"
         case .mode:
             return "Dark Mode"
+        case .setting:
+            return "Setting"
         }
     }
 }

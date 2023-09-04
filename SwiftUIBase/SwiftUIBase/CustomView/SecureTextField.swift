@@ -33,7 +33,7 @@ struct SecureTextField: View {
                     }
                 }
                 .padding(3)
-                .foregroundColor(.black)
+               // .foregroundColor(.black)
             }
         }
     }

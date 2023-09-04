@@ -10,8 +10,10 @@ import SwiftUI
 @main
 struct SwiftUIBaseApp: App {
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.locale) var local
     @AppStorage(CacheKey.mode.rawValue) private var isDarkMode: Bool?
     @AppStorage(CacheKey.isLogin.rawValue) private var isLogin = false
+    @AppStorage(CacheKey.language.rawValue) private var language = "ne_NP"
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -20,13 +22,19 @@ struct SwiftUIBaseApp: App {
                 } else {
                     LoginScreen()
                 }
-            }.onAppear{
+            }.onAppear {
+                print(local)
+                print(local.currency ?? "")
+                print(Locale.current)
+                print(local.identifier)
+                print(local.language)
+                print(local.language.languageCode?.identifier ?? "")
                 Networking.initialize(with: EnvironmentApp.networkConfig())
             }
             .environment(\.colorScheme, isDarkMode == nil ?  colorScheme : isDarkMode == true ? .dark : .light)
+            .environment(\.locale, .init(identifier: language))
         }
     }
-    
 }
 
 

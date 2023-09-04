@@ -15,10 +15,11 @@ struct SettingScreen: View {
             switch value {
             case .mode:
                 Toggle(value.title, isOn: $isDarkMode)
-                                .padding()
-                                .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    .toggleStyle(SwitchToggleStyle(tint: .blue))
             case .language:
-                Button(action: {
+                NavigationLink(value.title, destination: LanguageScreen())
+            case .setting:
+                Button( value.title, action: {
                     guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                         return
                     }
@@ -27,11 +28,9 @@ struct SettingScreen: View {
                             print("Settings opened: \(success)") // Prints true
                         })
                     }
-                }) {
-                    Text(value.title)
-                }
+                })
             }
-        }
+        }.navigationTitle("Setting")
     }
 }
 

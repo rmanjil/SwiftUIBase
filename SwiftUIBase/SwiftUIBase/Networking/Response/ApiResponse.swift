@@ -23,3 +23,8 @@ struct Response<T: Decodable> {
     var meta: Meta?
     var statusCode: Int 
 }
+
+
+struct None: Decodable {
+    
+}

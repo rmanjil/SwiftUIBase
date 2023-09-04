@@ -16,7 +16,7 @@ struct CustomText: View {
     var body: some View {
         Group {
             HStack {
-                Color.white.frame(width: 2)
+                Color.clear.frame(width: 2)
                 if isSecure {
                     SecureTextField(name: title, binder: $model.value)
                 } else  {
@@ -24,7 +24,7 @@ struct CustomText: View {
                 }
             }
         }
-        .foregroundColor(.black)
+       // .foregroundColor(.black)
         .frame( height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .overlay(content: {
             RoundedRectangle(cornerRadius: 5)
