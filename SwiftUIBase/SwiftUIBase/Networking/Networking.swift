@@ -35,12 +35,12 @@ class Networking: NetworkConformable {
     }
     
     /// Method to create a response publisher for data
-    func dataRequest<O>(router: NetworkingRouter, type: O.Type)  async throws ->  Response<O> where O : Decodable {
+    func dataRequest<O>(router: NetworkingRouter, type: O.Type)  async throws ->  Response<O> {
         try  await createAndPerformRequest(router, multipart: [])
     }
     
     /// Method to create a response publisher for data
-    func multipartRequest<O>(router: NetworkingRouter, multipart: [File], type: O.Type) async throws -> Response<O> where O : Decodable {
+    func multipartRequest<O>(router: NetworkingRouter, multipart: [File], type: O.Type) async throws -> Response<O> {
         try await createAndPerformRequest(router, multipart: multipart)
     }
     
@@ -54,18 +54,14 @@ class Networking: NetworkConformable {
         }
         let requestMaker = RequestMaker(router: router, config: config)
         
-        let result: RequestMaker.NetworkResult<ApiResponse<O>> = await (multipart.isEmpty ?   requestMaker.makeDataRequest() :  requestMaker.makeMultiRequest(multipart: multipart))
+        let result: RequestMaker.NetworkResult<O> = await (multipart.isEmpty ?   requestMaker.makeDataRequest() :  requestMaker.makeMultiRequest(multipart: multipart))
         
         switch result {
         case .success(let data):
-            if let model = data.object?.data  {
-                var  response = Response(data: model, statusCode: data.statusCode)
-                response.meta = data.object?.meta
-                return response
-            }
-            if let error = data.object?.errors?.first {
-                throw NetworkingError(error.detail ?? "NO_DETAIL_ERROR", code: error.code ?? 0)
-            }
+                if let model = data.object {
+                    let response = Response(data: model, statusCode: data.statusCode)
+                    return response
+                }
         case .failure(let error):
             throw error
         }

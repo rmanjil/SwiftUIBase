@@ -7,6 +7,16 @@
 
 import Foundation
 
+func ekParser<O: Decodable>(value: ApiResponse<O>) throws -> O {
+    if let model = value.data {
+        return model
+    } else if let error = value.errors?.first {
+        throw NetworkingError(error.detail ?? "ERROR_IS_MISSING_\(O.self)", code: error.code ?? 0)
+    } else {
+        throw NetworkingError("\(O.self)_MODEL_NOT_FOUND")
+    }
+}
+
 class UserManager {
     
     // MARK: - Singleton
@@ -15,11 +25,10 @@ class UserManager {
     func login(parameters: Parameters) async throws -> AuthModel {
         
         let response = try  await networking.dataRequest(router: AuthRouter.login(parameters),
-                                                         type: AuthModel.self)
-        KeyChainManager().set(object: response.data, forKey: .authModel)
-        //_ = try? await fetchProfile()
-        
-        return response.data
+                                                         type: ApiResponse<AuthModel>.self)
+        let authModel = try ekParser(value: response.data)
+        KeyChainManager().set(object: authModel, forKey: .authModel)
+        return authModel
     }
     
 //    func fetchProfile() async throws -> User {

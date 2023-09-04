@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NetworkingResponse<T: Decodable> {
+struct NetworkingResponse<T> {
     let data: Data?
     let object: T?
     let urlRequest: URLRequest
