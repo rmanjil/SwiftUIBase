@@ -42,11 +42,8 @@ struct RequestBuilder {
         request.addValue(config.clientId, forHTTPHeaderField: "clientId")
         request.addValue(config.clientSecret, forHTTPHeaderField: "clientSecret")
         request.addValue("ios", forHTTPHeaderField: "platform")
-        if let token = TokenManager().token,
-           let accessToken = token.accessToken,
-           let type = token.tokenType {
-            request.addValue("\(type) \(accessToken)", forHTTPHeaderField: "Authorization")
-        }
+        config.tokenManageable.tokenParam.forEach { request.addValue($1, forHTTPHeaderField: $0)}
+
     }
     
     private func applyEncodings(from encodings: [EncoderType], to request: URLRequest) throws -> URLRequest {

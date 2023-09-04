@@ -24,12 +24,13 @@ public class AuthModel: Codable {
 protocol TokenManageable {
     func refreshToken() async -> Bool
     func isTokenValid() -> Bool
-     
+    var tokenParam: [String: String] {get }
+    
 }
 
 class TokenManager: TokenManageable {
-
-    func refreshToken() async -> Bool { 
+    
+    func refreshToken() async -> Bool {
         do {
             let value = try  await Networking.default.dataRequest(router: AuthRouter.refreshToken(param), type: ApiResponse<AuthModel>.self)
             token = try ekParser(value: value.data)
@@ -39,7 +40,7 @@ class TokenManager: TokenManageable {
         }
         KeyChainManager().clear(.authModel)
         NotificationCenter.default.post(name: .tokenExpire, object: nil)
-
+        
         return false
     }
     
@@ -65,6 +66,16 @@ class TokenManager: TokenManageable {
         if let token {
             return ["grantType": "refresh_token", "refreshToken": token.refreshToken ?? ""]
         }
+        return [:]
+    }
+    
+    var tokenParam: [String: String] {
+        if let token =  token,
+           let accessToken = token.accessToken,
+           let type = token.tokenType {
+          return  ["Authorization": "\(type) \(accessToken)"]
+        }
+        
         return [:]
     }
 }
