@@ -16,16 +16,16 @@ struct NetworkingResponse<T> {
     let statusCode: Int
     
     init(router: NetworkingRouter, data: Data, request: URLRequest, response: URLResponse, object: T?) {
-            self.router = router
-            self.data = data
-            self.object = object
-            self.urlRequest = request
-            self.urlResponse = response
-            
-            if let httpURLResponse = response as? HTTPURLResponse {
-                self.statusCode = httpURLResponse.statusCode
-            } else {
-                self.statusCode = 0
-            }
+        self.router = router
+        self.data = data
+        self.object = object
+        self.urlRequest = request
+        self.urlResponse = response
+        
+        if let httpURLResponse = response as? HTTPURLResponse {
+            self.statusCode = httpURLResponse.statusCode
+        } else {
+            self.statusCode = 0
         }
+    }
 }

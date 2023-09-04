@@ -31,8 +31,8 @@ class TokenManager: TokenManageable {
 
     func refreshToken() async -> Bool { 
         do {
-            let value = try  await Networking.default.dataRequest(router: AuthRouter.refreshToken(param), type: AuthModel.self)
-            token = value.data
+            let value = try  await Networking.default.dataRequest(router: AuthRouter.refreshToken(param), type: ApiResponse<AuthModel>.self)
+            token = try ekParser(value: value.data)
             return true
         } catch {
             print(error.localizedDescription)
