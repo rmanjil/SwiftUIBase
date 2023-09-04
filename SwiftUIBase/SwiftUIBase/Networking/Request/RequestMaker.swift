@@ -87,18 +87,12 @@ struct RequestMaker {
             Logger.log(response, request: request, data: data)
             if let decodableType = O.self as? Decodable.Type {
                 let object =  try JSONDecoder().decode(decodableType, from: data)
-                let networkResponse = NetworkingResponse<O>(router: router, data: data, request: request, response: response, object: object as? O)
-                if networkResponse.statusCode == 401 {
-                    guard await refreshToken()  else {
-                        return .failure(NetworkingError("TOKEN_EXPIRE"))
-                    }
-                    return  await normalRequest(session, request: request)
-                }
-                return .success(networkResponse)
+                let  networkResponse = NetworkingResponse<O>(router: router, data: data, request: request, response: response, object: object as? O)
+                return  await handleResponse(networkResponse: networkResponse, session: session, request: request)
             }
             if let string = String(data: data, encoding: .utf8), let value = string as? O {
-                let networkResponse = NetworkingResponse<O>(router: router, data: data, request: request, response: response, object: value)
-                return .success(networkResponse)
+                let   networkResponse = NetworkingResponse<O>(router: router, data: data, request: request, response: response, object: value)
+                return  await handleResponse(networkResponse: networkResponse, session: session, request: request)
             }
             return .failure(NetworkingError("Response is not in correct format."))
             
@@ -114,6 +108,17 @@ struct RequestMaker {
         } catch {
             return .failure(NetworkingError(error))
         }
+    }
+    
+    
+    private func handleResponse<O>(networkResponse: NetworkingResponse<O>, session: URLSession, request: URLRequest) async -> RequestMaker.NetworkResult<O> {
+        if networkResponse.statusCode == 401 && router.needsAuthorization {
+            guard await refreshToken() else {
+                return .failure(NetworkingError("TOKEN_EXPIRE"))
+            }
+            return await normalRequest(session, request: request)
+        }
+        return .success(networkResponse)
     }
     
     private func multipartRequest<O>(_ session: URLSession, request: URLRequest, parameters: Parameters, multipart: [File]) async -> NetworkResult<O> {

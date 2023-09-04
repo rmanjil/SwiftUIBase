@@ -15,7 +15,7 @@ struct NetworkingResponse<T> {
     let router: NetworkingRouter
     let statusCode: Int
     
-    init(router: NetworkingRouter, data: Data, request: URLRequest, response: URLResponse, object: T?) {
+    init(router: NetworkingRouter, data: Data?, request: URLRequest, response: URLResponse, object: T?) {
         self.router = router
         self.data = data
         self.object = object
