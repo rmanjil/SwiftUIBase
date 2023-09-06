@@ -44,6 +44,31 @@ class TokenManager: TokenManageable {
         return false
     }
     
+    func test() async -> Bool {
+        await withCheckedContinuation({ [weak self] continuation in
+            guard let self else {
+                continuation.resume(returning: false)
+                return
+            }
+            let operation = OperationQueue()
+            print(param)
+            operation.addOperation {
+                Task {
+                    do {
+                        let value = try  await Networking.default.dataRequest(router: AuthRouter.refreshToken(self.param), type: ApiResponse<AuthModel>.self)
+                            self.token = try ekParser(value: value.data)
+                        continuation.resume(returning: true)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    KeyChainManager().clear(.authModel)
+                    NotificationCenter.default.post(name: .tokenExpire, object: nil)
+                    continuation.resume(returning: false)
+                }
+            }
+        })
+    }
+    
     var token: AuthModel? {
         set {
             if let newValue {

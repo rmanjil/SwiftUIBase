@@ -15,10 +15,6 @@ protocol NetworkConformable {
 }
 
 class Networking: NetworkConformable {
-    func dataRequest<T>(router: NetworkingRouter, type: T.Type) async throws -> T? {
-        nil 
-    }
-    
     
     /// make the instance shared
     public static let `default` = Networking()
@@ -67,5 +63,9 @@ class Networking: NetworkConformable {
         }
         
         throw NetworkingError("SOMETHING_WENT_WRONG")
+    }
+    
+    func dataRequest<T>(router: NetworkingRouter, type: T.Type) async throws -> T? {
+        nil
     }
 }
