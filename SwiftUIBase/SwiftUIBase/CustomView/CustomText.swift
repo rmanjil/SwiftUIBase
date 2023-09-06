@@ -18,9 +18,9 @@ struct CustomText: View {
             HStack {
                 Color.clear.frame(width: 2)
                 if isSecure {
-                    SecureTextField(name: title, binder: $model.value)
+                    SecureTextField(name: title, binder: $model.value.max(25))
                 } else  {
-                    TextField(title, text: $model.value, prompt: Text(title).foregroundColor(.gray)).textContentType(contentType)
+                    TextField(title, text: $model.value.max(10), prompt: Text(title).foregroundColor(.gray)).textContentType(contentType)
                 }
             }
         }
